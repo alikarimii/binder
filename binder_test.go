@@ -82,7 +82,7 @@ func TestBind(t *testing.T) {
 func TestWithMemory(t *testing.T) {
 
 	t.Run("Create Binder with custom max memory", func(t *testing.T) {
-		_ = pkg.NewBinder(pkg.WithCustomMemory(40 << 20)) // 40mb
+		_ = binder.NewBinder(binder.WithCustomMemory(40 << 20)) // 40mb
 		defer func() {
 			if e := recover(); e != nil {
 				t.Error("faild to create binder")
